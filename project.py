@@ -42,11 +42,19 @@ def main_menu():
             array, target_sum = input_data() 
         
         elif choice == '2':
+            if  'array' not in locals() and 'number' not in locals():
+                print("Ошибка: Необходимо сначала ввести значения.")
+                continue
+                
             subarrays = find_subarrays(array)  # Находим все подмассивы
             result = count_subarrays_with_sum(subarrays, target_sum)  # Считаем подмассивы с нужной суммой
         
         elif choice == '3':
-            print(f"Количество подмассивов, сумма которых равна {target_sum}: {result}")
+            if  'array' not in locals() and 'number' not in locals():
+                print("Ошибка: Необходимо сначала ввести значения.")
+                continue
+                
+                print(f"Количество подмассивов, сумма которых равна {target_sum}: {result}")
         
         elif choice == '0':
             print("Завершение работы программы.")
